@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+
+<head>
+
+<meta charset="utf-8">
+<title>Socifi Admin Panel</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="description" content="Socifi">
+<meta name="author" content="KaijuThemes">
+
+<link type='text/css' href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600' rel='stylesheet'>
+
+<link type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link type="text/css" href="assets/fonts/themify-icons/themify-icons.css" rel="stylesheet">
+<!-- Themify Icons -->
+<link type="text/css" rel="stylesheet" href="assets/css/styles.css">
+<link type="text/css" rel="stylesheet" href="assets\css\daterangepicker-bs3.css">
+
+<!-- Core CSS with all styles -->
+
+<link type="text/css" href="assets/plugins/codeprettifier/prettify.css" rel="stylesheet">
+<!-- Code Prettifier -->
+<link type="text/css" href="assets/plugins/iCheck/skins/minimal/blue.css" rel="stylesheet">
+<!-- iCheck -->
+
+<link rel="stylesheet" href="assets/plugins/Ion.RangeSlider/css/ion.rangeSlider.css">
+<link rel="stylesheet" href="assets/plugins/Ion.RangeSlider/css/ion.rangeSlider.skinNice.css">
+
+
+<!-- The following CSS are included as plugins and can be removed if unused-->
+
+<link type="text/css" href="assets/plugins/fullcalendar/fullcalendar.css" rel="stylesheet">
+<!-- FullCalendar -->
+<link type="text/css" href="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+<!-- jVectorMap -->
+
+
+<link rel="stylesheet" href="assets/plugins/switchery/switchery.css">
+
+<!-- amcharts links -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/pie.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<!-- amcharts links-->
+
+<script type="text/javascript" src="assets/plugins/switchery/switchery.js"></script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="assets/js/charts.js"></script>  
+
+</head>
+
+<body class="animated-content" ng-controller="myctrl">
+
+<header id="topnav" class="navbar navbar-default navbar-fixed-top" role="banner">
+
+<div class="logo-area">
+<span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
+<a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar">
+<span class="icon-bg">
+<i class="ti ti-menu"></i>
+</span>
+</a>
+</span>
+
+<a class="navbar-brand" href="index.html">Socifi</a>
+
+<div class="toolbar-icon-bg hidden-xs" id="toolbar-search">
+<div class="input-group">
+<span class="input-group-btn"><button class="btn" type="button"><i class="ti ti-search"></i></button></span>
+<input type="text" class="form-control" placeholder="Search...">
+<span class="input-group-btn"><button class="btn" type="button"><i class="ti ti-close"></i></button></span>
+</div>
+</div>
+
+</div>
+<!-- logo-area -->
+
+</header>
+
+<div id="wrapper">
+<div id="layout-static">
+<div class="static-sidebar-wrapper sidebar-default">
+<div class="static-sidebar">
+<div class="sidebar">
+    <div class="widget">
+        <div class="widget-body">
+            <div class="userinfo">
+                <div class="avatar">
+                    <img src="" class="img-responsive img-circle">
+                </div>
+                <div class="info">
+                    <span class="username">sreetheja</span>
+                    <span class="useremail">sree@realm.com</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="widget stay-on-collapse" id="widget-sidebar">
+        <nav role="navigation" class="widget-body">
+            <ul class="acc-menu">
+                <li class="nav-separator"><span>Explore</span></li>
+                <li><a href="dashboard.html"><i class="ti ti-home"></i><span>Dashboard</span></a></li>
+                <li><a href="#"><i class="ti ti-shield"></i><span>Campaigns</span></a></li>
+                <li><a href="#"><i class="ti ti-layout"></i><span>Hotspots</span></a></li>
+                <li><a href="settings.html"><i class="ti ti-settings"></i><span>Settings</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+</div>
+</div>
+</div>
+<!-- end of .sidebar-wrapper -->
+<div class="static-content-wrapper">
+<div class="static-content">
+<div class="page-content">
+   
+    <div class="container-fluid">
+        
+        <!-- my code starts here -->
+
+<div class="row clearfix">
+<div class="well well-lg back">
+<div class="col-lg-6 col-md-6 col-xs-12 mtop">
+
+    <ul class="btn-group btns">
+        <li> <button class="btn btn-success"> TODAY </button> </li>
+        <li> <button class="btn btn-success"> THIS WEEK </button> </li>
+        <li> <button class="btn btn-success"> LAST WEEK </button> </li>
+        <li> <button class="btn btn-success"> THIS MONTH </button> </li>
+        <li> <button class="btn btn-success"> LAST MONTH </button> </li>
+    </ul>
+
+</div>
+<!-- end of .mtop -->
+
+<div class="col-lg-6 col-md-6 col-xs-12 mtop1">
+
+   <div class="form-group">
+     
+        <form action="" class="form-horizontal row-border">
+            <div class="form-group">
+                <div class="col-sm-8">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="ti ti-calendar"></i></span>
+                        <input type="text" class="form-control" id="daterangepicker1">
+                    </div>
+                </div>
+            </div>
+            
+            </form>
+    
+</div>
+<!-- end of .form-group -->
+
+</div>
+<!-- end of .mtop / Calendar -->
+
+</div> 
+<!-- end of .back / .well-lg -->
+
+</div>
+<!-- end of 1st row -->
+
+<!-- *^*^*^*^*^*^*^*^*^**^*^*^*^*^* row2 starts here *^*^*^*^*^*^*^*^*^**^*^*^*^*^* -->
+        
+<div class="row">
+<div class="well well-lg row2">
+  
+    <div class="col-md-4">
+			<div class="info-tile tile-warning bvtile">
+				<div class="tile-icon">
+                    <i class="ti ti-eye" style="color:yellow;"></i></div>
+				<div class="tile-heading">
+                    <span class="inset-text-effect">BRAND VIEWS</span></div>
+				<div class="tile-body">
+                    <span class="inset-text-effect">13,532</span></div>
+				
+			</div>
+		</div>
+    
+        <div class="col-md-4">
+			<div class="info-tile tile-success sesstile">
+				<div class="tile-icon">
+                    <i class="ti ti-time" style="color:yellow;"></i></div>
+				<div class="tile-heading">
+                    <span class="inset-text-effect">SESSIONS</span></div>
+				<div class="tile-body">
+                    <span class="inset-text-effect">10,475</span></div>
+				
+			</div>
+		</div>
+    
+      <div class="col-md-4">
+			<div class="info-tile tile-info conntile">
+				<div class="tile-icon">
+                    <i class="ti ti-signal" style="color:yellow;"></i></div>
+				<div class="tile-heading">
+                    <span class="inset-text-effect">CONNECTIONS</span></div>
+				<div class="tile-body">
+                    <span class="inset-text-effect">11,864</span></div>
+				
+			</div>
+		</div>
+    
+    
+        </div> <!-- end of well -->
+        </div>        
+        <!-- end of row2 -->
+<!-- *^*^*^*^*^*^*^*^*^**^*^*^*^*^* chart graph starts here *^*^*^*^*^*^*^*^*^**^*^*^*^*^* -->
+
+<div class="row">
+<div class="well well-lg row3"> 
+<div class="col-lg-12 seriesgraph">
+    <div id="chartseries"> </div>
+</div>
+<!-- end of columns -->
+</div>
+<!-- end of well -->
+</div>
+<!-- end of 3rd row -->
+
+<div class="row" id="break">
+<div class="well well-lg row4"> 
+<div class="col-lg-3 col-md-3 col-xs-12 hidden-xs"> 
+
+        <ul class="list-unstyled end-data brdrright">
+            <li class="list-item"><button ng-click="fun('visitorsdata')">Visitor's Data</button></li>
+            <li class="list-item"><button ng-click="fun('agerange')">Age Range</button></li>
+            <li class="list-item"><button ng-click="fun('gender')">Gender</button></li>
+            <li class="list-item"><button ng-click="fun('os')">Operating System</button></li>
+            <li class="list-item"><button ng-click="fun('device')">Device</button></li>
+            <li class="list-item"><button ng-click="fun('man')">Manufacturer</button></li>
+            <li class="list-item"><button ng-click="fun('browser')">Browser</button></li>
+            <li class="list-item"><button ng-click="fun('langu')">Language</button></li>
+            <li class="list-item"><button ng-click="fun('authmtd')">Authentication Method</button></li>
+        </ul>
+</div>
+<!-- end of cols3 -->
+
+<div class="col-xs-12 hidden-lg hidden-md"> 
+
+<form class="form-inline">
+    <div class="form-group">
+        <select class="form-control">
+            <option value="" selected="selected">Select an Option</option>
+            <option value="vd">Visitor's Data</option>
+            <option value="age">Age</option>
+            <option value="gen">Gender</option>
+            <option value="os">Operating System</option>
+            <option value="dev">Device</option>
+            <option value="mfr">Manufacturer</option>
+            <option value="brow">Browser</option>
+            <option value="lang">Language</option>
+            <option value="auth">Authentication Method</option>
+            
+        </select>
+    </div>
+    </form>
+
+
+</div>
+
+<div class="col-lg-9 col-md-9 col-xs-12">
+
+<div id="chartdiv"></div>
+
+</div>
+<!-- end of cols9 -->
+</div>
+<!-- end of well -->
+</div>
+<!-- end of 4th row -->
+
+  
+    </div>
+    <!-- end of container-fluid -->
+
+    <footer role="contentinfo">
+        <div class="clearfix">
+            <ul class="list-unstyled list-inline pull-left">
+                <li>
+                    <h6 style="margin: 0;">&copy; 2016 Laurel Solutions | MADE IN INDIA</h6></li>
+            </ul>
+            <button class="pull-right btn btn-link btn-xs hidden-print" id="back-to-top"><i class="ti ti-arrow-up"></i></button>
+        </div>
+    </footer>
+
+</div>
+</div>
+</div>
+<!-- end of static-content-wrapper -->
+
+</div>
+<!-- end of .layout-static -->
+</div>
+<!-- end of .wrapper -->
+
+<script>
+
+// pie chart code
+
+</script>
+
+<!--<script src="amcharts/plugins/responsive/responsive.min.js" type="text/javascript"></script>-->
+
+<script type="text/javascript" src="assets/js/jquery-1.10.2.min.js"></script>
+<!-- Load jQuery -->
+<script type="text/javascript" src="assets/js/jqueryui-1.10.3.min.js"></script>
+<!-- Load jQueryUI -->
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<!-- Load Bootstrap -->
+<script type="text/javascript" src="assets/js/enquire.min.js"></script>
+<!-- Load Enquire -->
+
+<script type="text/javascript" src="assets/plugins/velocityjs/velocity.min.js"></script>
+<!-- Load Velocity for Animated Content -->
+<script type="text/javascript" src="assets/plugins/velocityjs/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="assets/plugins/wijets/wijets.js"></script>
+<!-- Wijet -->
+
+<script type="text/javascript" src="assets/plugins/codeprettifier/prettify.js"></script>
+<!-- Code Prettifier  -->
+<script type="text/javascript" src="assets/plugins/bootstrap-switch/bootstrap-switch.js"></script>
+<!-- Swith/Toggle Button -->
+
+<script type="text/javascript" src="assets/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js"></script>
+<!-- Bootstrap Tabdrop -->
+
+<script type="text/javascript" src="assets/plugins/iCheck/icheck.min.js"></script>
+<!-- iCheck -->
+
+<script type="text/javascript" src="assets/plugins/nanoScroller/js/jquery.nanoscroller.min.js"></script>
+<!-- nano scroller -->
+
+<script type="text/javascript" src="assets/js/application.js"></script>
+
+<script type="text/javascript" src="assets/demo/demo-switcher.js"></script>
+
+<!-- End loading site level scripts -->
+
+<!-- Load page level scripts-->
+
+<script type="text/javascript" src="assets/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+<!-- jVectorMap -->
+<script type="text/javascript" src="assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jVectorMap -->
+<script type="text/javascript" src="assets/plugins/easypiechart/jquery.easypiechart.js"></script>
+<script type="text/javascript" src="assets/plugins/fullcalendar/moment.min.js"></script>
+<!-- Moment.js Dependency -->
+<script type="text/javascript" src="assets/plugins/fullcalendar/fullcalendar.min.js"></script>
+<!-- Calendar Plugin -->
+
+<script type="text/javascript" src="assets/plugins/Ion.RangeSlider/js/ion-rangeSlider/ion.rangeSlider.min.js"></script>
+<!-- ion.rangeslider plugin -->
+
+<script type="text/javascript" src="assets/demo/demo-index.js"></script>
+<!-- Initialize scripts for this page-->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.min.js" ></script>  
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+
+<script src="dashboard.js"></script>
+
+<script src="assets\js\daterangepicker.js"></script>
+
+<script src="assets\js\moment.min.js"></script>
+<script type="text/javascript" src="assets/js/demo-pickers.js"></script>
+
+<!-- End loading page level scripts-->
+
+</body>
+
+</html>
